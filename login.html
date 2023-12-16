@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protfolio</title>
+  <link rel="stylesheet" href="login.css">
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username === "admin" && password === "password") {
+        alert("Download successful!");
+        // Redirect to a different page upon successful login
+        window.location.href = "index.html";
+      } else if (username === "guest" && password === "12345") {
+        alert("Guest can't access CV!");
+        // Redirect to another page for guest login
+        window.location.href = "#";
+      } else {
+        alert("Invalid username or password");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Download CV</h2>
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="button" value="Download" onclick="validateForm()">
+    </form>
+  </div>
+</body>
+</html>
